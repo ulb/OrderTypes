@@ -4,18 +4,20 @@ var ot_data = {};
 var data_ot9_ready = false;
 var extrem_09_ready = false;
 
+const oturl = "http://www.ist.tugraz.at/aichholzer/research/rp/triangulations/ordertypes/data/"
+
 /**
  * Asynchronously loads a portion of the files to search through of the database
  */
 async function getBlobs() {
     const [ot3, ot4, ot5, ot6, ot7, ot8, ot9] = await Promise.all([
-        fetch('/ot_data/otypes/otypes03.b08'),
-        fetch('/ot_data/otypes/otypes04.b08'),
-        fetch('/ot_data/otypes/otypes05.b08'),
-        fetch('/ot_data/otypes/otypes06.b08'),
-        fetch('/ot_data/otypes/otypes07.b08'),
-        fetch('/ot_data/otypes/otypes08.b08'),
-        fetch('/ot_data/otypes/otypes09.b16')
+        fetch(oturl+'otypes03.b08'),
+        fetch(oturl+'otypes04.b08'),
+        fetch(oturl+'otypes05.b08'),
+        fetch(oturl+'otypes06.b08'),
+        fetch(oturl+'otypes07.b08'),
+        fetch(oturl+'otypes08.b08'),
+        fetch(oturl+'otypes09.b16')
     ]);
 
     ot_data["otypes03_b08"] = await ot3.arrayBuffer();
@@ -34,13 +36,13 @@ async function getBlobs() {
  */
 async function getBlobsExtremePoints() {
     const [extr3, extr4, extr5, extr6, extr7, extr8, extr9] = await Promise.all([
-        fetch('/ot_data/extrem/extrem03.b08'),
-        fetch('/ot_data/extrem/extrem04.b08'),
-        fetch('/ot_data/extrem/extrem05.b08'),
-        fetch('/ot_data/extrem/extrem06.b08'),
-        fetch('/ot_data/extrem/extrem07.b08'),
-        fetch('/ot_data/extrem/extrem08.b08'),
-        fetch('/ot_data/extrem/extrem09.b08')
+        fetch(oturl+'extrem03.b08'),
+        fetch(oturl+'extrem04.b08'),
+        fetch(oturl+'extrem05.b08'),
+        fetch(oturl+'extrem06.b08'),
+        fetch(oturl+'extrem07.b08'),
+        fetch(oturl+'extrem08.b08'),
+        fetch(oturl+'extrem09.b08')
     ])
 
     ot_data["extrem03_b08"] = await extr3.arrayBuffer();
