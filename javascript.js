@@ -5,7 +5,7 @@ var data_ot9_ready = false;
 var extrem_09_ready = false;
 
 //const oturl = "http://www.ist.tugraz.at/aichholzer/research/rp/triangulations/ordertypes/data/";
-const oturl = "http://homepages.ulb.ac.be/~slanger/ot/";
+const oturl = "https://www.slef.org/ot/";
 
 /**
  * Asynchronously loads a portion of the files to search through of the database
